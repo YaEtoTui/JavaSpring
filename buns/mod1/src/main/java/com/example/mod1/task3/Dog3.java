@@ -3,9 +3,9 @@ package com.example.mod1.task3;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Dog implements Pet {
+public class Dog3 implements Pet3 {
 
-    public Dog() {
+    public Dog3() {
         System.out.println("Создан бин Dog task3");
     }
 

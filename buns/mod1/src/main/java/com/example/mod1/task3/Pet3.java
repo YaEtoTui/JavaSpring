@@ -1,5 +1,5 @@
 package com.example.mod1.task3;
 
-public interface Pet {
+public interface Pet3 {
     void say();
 }

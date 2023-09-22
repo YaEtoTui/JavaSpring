@@ -1,8 +1,8 @@
 package com.example.mod1.task1;
 
-public class Dog implements Pet {
+public class Dog1 implements Pet1 {
 
-    public Dog() {
+    public Dog1() {
         System.out.println("Создан бин Dog");
     }
 

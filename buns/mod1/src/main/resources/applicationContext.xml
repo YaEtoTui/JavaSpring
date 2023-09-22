@@ -11,11 +11,11 @@
     <context:component-scan base-package="com.example.mod1.task1"/>
 
     <bean id = "petBean"
-          class = "com.example.mod1.task1.Dog">
+          class = "com.example.mod1.task1.Dog1">
     </bean>
 
     <bean id = "personBean"
-          class = "com.example.mod1.task1.Person">
+          class = "com.example.mod1.task1.Person1">
         <property name = "pet" ref = "petBean"/>
         <property name = "surname" value = "Sazhin"/>
         <property name = "age" value = "20"/>

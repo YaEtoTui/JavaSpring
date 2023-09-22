@@ -4,13 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component("beanPerson")
-public class Person {
+@Component("beanPerson2")
+public class Person2 {
     @Autowired
-    private Pet pet;
+    private Pet2 pet;
 
 
-    public Person(@Qualifier("dogBean") Pet pet) {
+    public Person2(@Qualifier("dogBean2") Pet2 pet) {
         System.out.println("Создан bean Человек");
         this.pet = pet;
     }

@@ -7,15 +7,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 @PropertySource("classpath:application.yaml")
-public class Person {
+public class Person3 {
     @Autowired
-    public Pet pet;
+    public Pet3 pet;
     @Value("${surname}")
     public String surname;
     @Value("${age}")
     public int age;
 
-    public Person(Pet pet) {
+    public Person3(Pet3 pet) {
         System.out.println("Создан bean Человек task3");
         this.pet = pet;
     }

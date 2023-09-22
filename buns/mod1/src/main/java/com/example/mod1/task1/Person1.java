@@ -1,16 +1,16 @@
 package com.example.mod1.task1;
 
-public class Person {
-    public Pet pet;
+public class Person1 {
+    public Pet1 pet;
     public String surname;
     public int age;
 
-    public Person(Pet pet) {
+    public Person1(Pet1 pet) {
         System.out.println("Создан bean Человек");
         this.pet = pet;
     }
 
-    public void setPet(Pet pet) {
+    public void setPet(Pet1 pet) {
         System.out.println("Получен Pet");
         this.pet = pet;
     }

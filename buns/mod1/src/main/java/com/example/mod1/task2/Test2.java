@@ -6,7 +6,7 @@ public class Test2 {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext2.xml");
 
-        Person person = context.getBean("beanPerson", Person.class);
+        Person2 person = context.getBean("beanPerson2", Person2.class);
         person.sayHello();
 
         context.close();

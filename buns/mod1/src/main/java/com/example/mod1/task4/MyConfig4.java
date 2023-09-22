@@ -4,15 +4,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class MyConfig {
+public class MyConfig4 {
 
     @Bean
-    public Pet dogBean() {
-        return new Dog();
+    public Pet4 dogBean() {
+        return new Dog4();
     }
 
     @Bean
-    public Person personBean() {
-        return new Person(dogBean());
+    public Person4 personBean() {
+        return new Person4(dogBean());
     }
 }
