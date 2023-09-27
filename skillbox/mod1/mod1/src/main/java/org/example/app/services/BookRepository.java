@@ -59,6 +59,8 @@ public class BookRepository implements ProjectRepository<Book> {
 
     /*проверяем, что строка типа Integer и является размером книги*/
     private boolean checkBookIsInteger(Book book, String regexToRemove) {
+        if (regexToRemove.isEmpty())
+            return false;
         for (int i = 0; i < regexToRemove.length(); i++) {
             char c = regexToRemove.charAt(i);
             if (c < '0' || c > '9') {
