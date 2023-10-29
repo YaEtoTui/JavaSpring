@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                            https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="db" author="SazhinEA" context="db">
+
+        <createTable tableName="author">
+
+            <column name="id" type="bigint">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="first_name" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="last_name" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+        <createTable tableName="book">
+
+            <column name="id" type="bigint">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="author_id" type="bigint">
+                <constraints foreignKeyName="book_author_fk"
+                             referencedTableName="author"
+                             referencedColumnNames="id"/>
+            </column>
+
+            <column name="title" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="price_old" type="int4">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="price" type="int4">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+        <createTable tableName="book_file">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="book_id" type="bigint">
+                <constraints foreignKeyName="book_file_book_fk"
+                             referencedTableName="book"
+                             referencedColumnNames="id"/>
+            </column>
+
+            <column name="name" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="type" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="size" type="int4">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="path" type="varchar">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="time_start" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="time_update" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+        <sql>
+            insert into author (id, first_name, last_name) values (1, 'Aldwin', 'Maddison');
+            insert into author (id, first_name, last_name) values (2, 'Marlene', 'Claydon');
+            insert into author (id, first_name, last_name) values (3, 'Maurits', 'Brende');
+            insert into author (id, first_name, last_name) values (4, 'Constantine', 'Garton');
+            insert into author (id, first_name, last_name) values (5, 'Kali', 'Barends');
+            insert into author (id, first_name, last_name) values (6, 'Courtnay', 'Farleigh');
+            insert into author (id, first_name, last_name) values (7, 'Yorke', 'MacDwyer');
+            insert into author (id, first_name, last_name) values (8, 'Cristiano', 'Peasey');
+            insert into author (id, first_name, last_name) values (9, 'Tod', 'Woolaston');
+            insert into author (id, first_name, last_name) values (10, 'Jen', 'Cunney');
+            insert into author (id, first_name, last_name) values (11, 'Shalom', 'Rodbourne');
+            insert into author (id, first_name, last_name) values (12, 'Collin', 'Spaughton');
+            insert into author (id, first_name, last_name) values (13, 'Honoria', 'Matthesius');
+            insert into author (id, first_name, last_name) values (14, 'Daron', 'Scarce');
+            insert into author (id, first_name, last_name) values (15, 'Khalil', 'Arnull');
+            insert into author (id, first_name, last_name) values (16, 'Tisha', 'Dauber');
+            insert into author (id, first_name, last_name) values (17, 'Tedd', 'Burles');
+            insert into author (id, first_name, last_name) values (18, 'Randie', 'Andreas');
+            insert into author (id, first_name, last_name) values (19, 'Karlene', 'Granger');
+            insert into author (id, first_name, last_name) values (20, 'Major', 'Mattersley');
+            insert into author (id, first_name, last_name) values (21, 'Hatti', 'Skelbeck');
+
+            insert into book (id, price, price_old, title, author_id) values (1, 2271, 3149, 'Tempsoft', 18);
+            insert into book (id, price, price_old, title, author_id) values (2, 1857, 1329, 'Fix San', 12);
+            insert into book (id, price, price_old, title, author_id) values (3, 2569, 1961, 'Ventosanzap', 5);
+            insert into book (id, price, price_old, title, author_id) values (4, 1429, 3820, 'Toughjoyfax', 16);
+            insert into book (id, price, price_old, title, author_id) values (5, 2202, 2667, 'Matsoft', 5);
+            insert into book (id, price, price_old, title, author_id) values (6, 2954, 1399, 'Zontrax', 10);
+            insert into book (id, price, price_old, title, author_id) values (7, 2307, 3157, 'Lotstring', 4);
+            insert into book (id, price, price_old, title, author_id) values (8, 1304, 3447, 'Andalax', 3);
+            insert into book (id, price, price_old, title, author_id) values (9, 2099, 3218, 'Otcom', 11);
+            insert into book (id, price, price_old, title, author_id) values (10, 2127, 2419, 'Sub-Ex', 2);
+            insert into book (id, price, price_old, title, author_id) values (11, 1994, 3990, 'Zamit', 6);
+            insert into book (id, price, price_old, title, author_id) values (12, 1858, 1126, 'Cardify', 4);
+            insert into book (id, price, price_old, title, author_id) values (13, 838, 3761, 'Redhold', 13);
+            insert into book (id, price, price_old, title, author_id) values (14, 2147, 2606, 'Konklux', 16);
+            insert into book (id, price, price_old, title, author_id) values (15, 2517, 1995, 'Matsoft', 5);
+            insert into book (id, price, price_old, title, author_id) values (16, 912, 3350, 'Trippledex', 20);
+            insert into book (id, price, price_old, title, author_id) values (17, 692, 3385, 'Voyatouch', 11);
+            insert into book (id, price, price_old, title, author_id) values (18, 1702, 3746, 'Voltsillam', 10);
+        </sql>
+
+    </changeSet>
+
+</databaseChangeLog>
